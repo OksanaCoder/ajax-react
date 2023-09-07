@@ -1,10 +1,10 @@
-import React from 'react';
-//import errorPic from './error.png';
+import React from "react";
+import styles from "./Error.module.scss";
+
 const Error = () => {
   return (
-    <div>
-      {/* <img src={errorPic} alt="error" /> */}
-      <img src="./images/error.png" alt="error" />
+    <div className={styles.flexCenter}>
+      <img src="./images/error.png" alt="error" className={styles.error} />
     </div>
   );
 };

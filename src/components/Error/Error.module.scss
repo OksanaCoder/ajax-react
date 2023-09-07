@@ -1,0 +1,11 @@
+$orangeBg : #FF6B29;
+body {
+    background-color: $orangeBg;
+}
+.error {
+    width: 700px;
+}
+.flexCenter {
+    display: flex;
+    justify-content: center;
+}

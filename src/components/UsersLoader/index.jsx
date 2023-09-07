@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { getUsers } from '../../api';
-import Error from '../Error';
+import React, { Component } from "react";
+import { getUsers } from "../../api";
+import Error from "../Error";
 // import styles from './UsersLoader.module.scss';
 
 class UsersLoader extends Component {
@@ -11,7 +11,7 @@ class UsersLoader extends Component {
       error: null,
       isFetching: false,
       currentPage: 1,
-      currentResults: 5,
+      currentResults: 5
     };
   }
 
@@ -39,7 +39,10 @@ class UsersLoader extends Component {
       this.load();
     }
   }
-
+  handleChangeCurrentResults = (e) => {
+    this.setState({ currentResults: e.target.value });
+    this.load();
+  };
   prevPage = () => {
     if (this.state.currentPage > 1) {
       this.setState((state, props) => ({ currentPage: state.currentPage - 1 }));
@@ -50,13 +53,22 @@ class UsersLoader extends Component {
     this.setState((state, props) => ({ currentPage: state.currentPage + 1 }));
 
   render() {
-    const { isFetching, error, users, currentPage } = this.state;
+    const { isFetching, error, users, currentPage, currentResults } =
+      this.state;
     if (error) {
       return <Error />;
     }
     return (
       <section>
         <h2>Users:</h2>
+        <select
+          value={currentResults}
+          onChange={this.handleChangeCurrentResults}
+        >
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="15">15</option>
+        </select>
         <div>
           <button onClick={this.prevPage} disabled={currentPage === 1}>
             &lt; prev
@@ -66,9 +78,8 @@ class UsersLoader extends Component {
         </div>
         <ul>
           {isFetching && <h2>Loading...</h2>}
-          {isFetching || users.map((user) => (
-            <li key={user.login.uuid}>{user.email}</li>
-          ))}
+          {isFetching ||
+            users.map((user) => <li key={user.login.uuid}>{user.email}</li>)}
         </ul>
       </section>
     );

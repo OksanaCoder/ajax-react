@@ -1,31 +1,31 @@
 export const USERS = [
   {
     id: 1,
-    firstName: 'Brad',
-    lastName: 'Pitt',
+    firstName: "Brad",
+    lastName: "Pitt"
   },
   {
     id: 7,
-    firstName: 'Alex',
-    lastName: 'Varker',
+    firstName: "Alex",
+    lastName: "Varker"
   },
   {
     id: 3,
-    firstName: 'Tom',
-    lastName: 'Rot',
-  },
+    firstName: "Tom",
+    lastName: "Rot"
+  }
 ];
 
 export const COLORS = {
-  MAIN: 'aqua',
-  PITFALL: 'gold',
-  DEPRECATE: 'red',
+  MAIN: "aqua",
+  PITFALL: "gold",
+  DEPRECATE: "red"
 };
 
 export const API = {
-  URL: 'https://randomuser.me/api/',
+  URL: "https://randomuser1.me/api/",
   RESULTS: 5,
   PAGE: 1,
-  KEY: 'fm20231',
-  NAT: 'gb',
+  KEY: "fm20231",
+  NAT: "gb"
 };
