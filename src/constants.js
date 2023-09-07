@@ -23,7 +23,7 @@ export const COLORS = {
 };
 
 export const API = {
-  URL: "https://randomuser1.me/api/",
+  URL: "https://randomuser.me/api/",
   RESULTS: 5,
   PAGE: 1,
   KEY: "fm20231",
