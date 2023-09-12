@@ -34,14 +34,18 @@ class UsersLoader extends Component {
   componentDidMount() {
     this.load();
   }
+
   componentDidUpdate(prevProps, prevState) {
-    if (this.state.currentPage !== prevState.currentPage) {
+    if (
+      this.state.currentPage !== prevState.currentPage ||
+      this.state.currentResults !== prevState.currentResults
+    ) {
       this.load();
     }
   }
   handleChangeCurrentResults = (e) => {
     this.setState({ currentResults: e.target.value });
-    this.load();
+    // this.load();
   };
   prevPage = () => {
     if (this.state.currentPage > 1) {
